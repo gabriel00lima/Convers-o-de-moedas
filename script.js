@@ -1,16 +1,16 @@
 
 let valoresConversao = {
     real : {
-        dolar: 5.03,
-        euro: 5.47 
+        dolar: 0.27,
+        euro: 0.18 
     },
     dolar: {
-        real: 0.27,
-        euro: 0.92
+        real: 5.03,
+        euro: 1.09
     },
     euro:{
-        real: 0.18,
-        dolar: 1.09
+        real: 5.47,
+        dolar: 0.92
     }
 }
 
@@ -23,8 +23,14 @@ let valorUsusario = document.getElementById("valor-usuario").value;
 let moedaOrigem = document.getElementById("moeda1").value;
 let moedaDestino = document.getElementById("moeda2").value;
 
-
 let conversao = valorUsusario * valoresConversao[moedaOrigem][moedaDestino];
+
+
+let paragrafoResultado = document.getElementById("resultado");
+paragrafoResultado.textContent = conversao;
+
+
+
 
 console.log(conversao)
 
