@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversão de Moedas</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div class="container">
         <h1 id="titulo">Conversão de Moedas</h1>
-        <input type="text">
+        <input type="text" id="valor-usuario">
         <select name="moeda1" id="moeda1">
             <option value="real">Real</option>
             <option value="dolar">Dólar</option>
@@ -23,7 +24,7 @@
             <option value="dolar">Dólar</option>
             <option value="euro">Euro</option>
         </select>
-        <button>Converter</button>
+        <button onclick="converter();">Converter</button>
         <p id="resultado">Resultado</p>
     </div>
 
