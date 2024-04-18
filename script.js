@@ -33,8 +33,16 @@ botaoLimpar.addEventListener("click",limpar);
 let botaoAceitaMensagem = document.getElementById("botao-aceita-mensagem");
 botaoAceitaMensagem.addEventListener("click",aceitaMensagem);
 
+if(localStorage.getItem("aceitouCookie")=="1"){
+    aceitaMensagem();
+}
+
 function aceitaMensagem(){
-    alert("Usuario aceitou os termos do site")
+   let divMensagemUsuario = document.getElementById("container-mensagem-usuario");
+   //quero adicionar uma classe (oculto) ao elemento divMensagemUsuario
+   divMensagemUsuario.classList.add("oculto");
+
+   localStorage.setItem("aceitouCookie","1");
 }
 
 
