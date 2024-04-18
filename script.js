@@ -37,6 +37,11 @@ if(localStorage.getItem("aceitouCookie")=="1"){
     aceitaMensagem();
 }
 
+function salvaResultadoNoHistorico(conversao){
+    let conversaoEmJson = JSON.stringify(conversao);
+    localStorage.setItem("historico",conversaoEmJson);
+}
+
 function aceitaMensagem(){
    let divMensagemUsuario = document.getElementById("container-mensagem-usuario");
    //quero adicionar uma classe (oculto) ao elemento divMensagemUsuario
@@ -86,6 +91,14 @@ if(moedaDestino == "euro"){
 let paragrafoResultado = document.getElementById("resultado");
 paragrafoResultado.textContent = simbolo + " " + conversao.toFixed(2);
 
+let resultadoDaConversao = {
+    valor:valorUsuario,
+    moeda1:moedaOrigem,
+    moeda2:moedaDestino,
+    resultado:conversao
+}
+
+salvaResultadoNoHistorico(resultadoDaConversao);
 
 
 
@@ -100,4 +113,9 @@ let moeda2 = document.getElementById("moeda2").value;
 document.getElementById("moeda1").value = moeda2;
 document.getElementById("moeda2").value = moeda1
 
+}
+
+function recuperarHistoricoDeConversoes(){
+    let historico = localStorage.getItem("historico");
+    let hitoricoConvertido = JSON.parse(historico);
 }
