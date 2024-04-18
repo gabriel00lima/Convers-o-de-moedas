@@ -21,7 +21,21 @@ if(event.key == "Enter"){
 }
 });
 
+let botaoConverter = document.getElementById("botao-converter");
+botaoConverter.addEventListener("click",converter);
 
+let botaoInverter = document.getElementById("botao-inverter");
+botaoInverter.addEventListener("click",inverter);
+
+let botaoLimpar = document.getElementById("botao-limpar");
+botaoLimpar.addEventListener("click",limpar);
+
+let botaoAceitaMensagem = document.getElementById("botao-aceita-mensagem");
+botaoAceitaMensagem.addEventListener("click",aceitaMensagem);
+
+function aceitaMensagem(){
+    alert("Usuario aceitou os termos do site")
+}
 
 
 
@@ -44,6 +58,8 @@ if (moedaOrigem == moedaDestino) {
     alert("As moedas são iguais");
     return;
 }
+
+
 
 let conversao = valorUsusario * valoresConversao[moedaOrigem][moedaDestino];
 
